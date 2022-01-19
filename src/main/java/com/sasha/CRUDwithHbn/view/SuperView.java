@@ -41,7 +41,7 @@ public class SuperView {
                     break;
                 case 4:
                     System.out.println(menu41);
-                    GbnUtils.closeSessionFectory();
+                    GbnUtils.closeSessionFactory();
                     break;
             }
 

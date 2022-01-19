@@ -14,7 +14,7 @@ public class GbnUtils {
         return sessionFactory;
     }
 
-    public static void closeSessionFectory() {
+    public static void closeSessionFactory() {
         sessionFactory.close();
     }
 
