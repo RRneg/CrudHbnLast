@@ -1,9 +1,11 @@
 package com.sasha.CRUDwithHbn.service;
 
 
-import com.sasha.sqlpractic.model.Post;
-import com.sasha.sqlpractic.repository.PostRepository;
-import com.sasha.sqlpractic.repository.jdbc.JDBCPostRepositoryImpl;
+
+
+import com.sasha.CRUDwithHbn.model.Post;
+import com.sasha.CRUDwithHbn.repository.PostRepository;
+import com.sasha.CRUDwithHbn.repository.gbn.GBNPostRepositoryImpl;
 
 import java.util.List;
 
@@ -12,7 +14,7 @@ public class PostService {
     private PostRepository postRepository;
 
     public PostService() {
-        this.postRepository = new JDBCPostRepositoryImpl();
+        this.postRepository = new GBNPostRepositoryImpl();
     }
 
     public PostService(PostRepository postRepositoryConstr) {

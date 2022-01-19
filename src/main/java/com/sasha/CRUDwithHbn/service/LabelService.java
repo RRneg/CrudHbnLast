@@ -1,13 +1,18 @@
 package com.sasha.CRUDwithHbn.service;
 
 
+import com.sasha.CRUDwithHbn.model.Label;
+import com.sasha.CRUDwithHbn.repository.LabelRepository;
+import com.sasha.CRUDwithHbn.repository.gbn.GBNLabelRepositoryImpl;
+
+import java.util.List;
 
 public class LabelService {
 
     private LabelRepository labelRepository;
 
     public LabelService() {
-        this.labelRepository = new JDBCLabelRepositoryImpl();
+        this.labelRepository = new GBNLabelRepositoryImpl();
     }
 
     public LabelService(LabelRepository labelRepository) {

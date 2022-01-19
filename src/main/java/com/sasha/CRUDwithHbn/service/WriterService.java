@@ -1,9 +1,10 @@
 package com.sasha.CRUDwithHbn.service;
 
 
-import com.sasha.sqlpractic.model.Writer;
-import com.sasha.sqlpractic.repository.WriterRepository;
-import com.sasha.sqlpractic.repository.jdbc.JDBCWriterRepositoryImpl;
+import com.sasha.CRUDwithHbn.model.Writer;
+import com.sasha.CRUDwithHbn.repository.WriterRepository;
+import com.sasha.CRUDwithHbn.repository.gbn.GBNWriterRepositoryImpl;
+
 
 import java.util.List;
 
@@ -12,7 +13,7 @@ public class WriterService {
     private WriterRepository writerRepository;
 
     public WriterService() {
-        this.writerRepository = new JDBCWriterRepositoryImpl();
+        this.writerRepository = new GBNWriterRepositoryImpl();
     }
 
     public WriterService(WriterRepository writerRepository) {
