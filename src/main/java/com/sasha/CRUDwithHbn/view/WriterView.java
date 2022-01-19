@@ -2,7 +2,13 @@ package com.sasha.CRUDwithHbn.view;
 
 
 
+import com.sasha.CRUDwithHbn.controller.PostController;
+import com.sasha.CRUDwithHbn.controller.WriterController;
+import com.sasha.CRUDwithHbn.model.Post;
+import com.sasha.CRUDwithHbn.model.Writer;
+
 import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 import java.util.stream.Collectors;
 

@@ -2,6 +2,9 @@ package com.sasha.CRUDwithHbn.view;
 
 
 
+import com.sasha.CRUDwithHbn.controller.LabelController;
+import com.sasha.CRUDwithHbn.model.Label;
+
 import java.util.Scanner;
 
 public class LabelView {
