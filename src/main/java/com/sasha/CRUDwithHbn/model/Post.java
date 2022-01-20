@@ -1,13 +1,30 @@
 package com.sasha.CRUDwithHbn.model;
 
-import java.util.List;
+import net.bytebuddy.dynamic.loading.InjectionClassLoader;
 
+import javax.persistence.*;
+import java.util.List;
+@Entity
+@Table (name = "posts", schema = "practic")
 public class Post {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column (name = "id")
     Integer id;
+
+    @Column(name = "content")
     String content;
+
+    @Column(name = "created")
     String created;
+
+    @Column(name = "updated")
     String updated;
+
+
     List<Label> labels;
+
+    @Column(name = "poststatus")
     PostStatus postStatus;
 
     public Post() {
@@ -54,6 +71,7 @@ public class Post {
         this.updated = updated;
     }
 
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "posts") //не уверен, что с posts
     public List<Label> getLabels() {
         return labels;
     }

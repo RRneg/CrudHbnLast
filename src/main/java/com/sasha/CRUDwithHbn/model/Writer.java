@@ -1,11 +1,23 @@
 package com.sasha.CRUDwithHbn.model;
 
+import javax.persistence.*;
 import java.util.List;
 
+@Entity
+@Table(name = "writers", schema = "practic")
 public class Writer {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id")
     Integer id;
+
+    @Column(name = "firstname")
     String firstName;
+
+    @Column(name = "lastname")
     String lastName;
+
+
     List<Post> posts;
 
     public Writer() {
@@ -43,6 +55,7 @@ public class Writer {
         this.lastName = lastName;
     }
 
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "writers", cascade = CascadeType.ALL) //не уверен, что writers
     public List<Post> getPosts() {
         return posts;
     }

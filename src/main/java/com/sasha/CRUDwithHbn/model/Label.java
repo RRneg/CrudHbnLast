@@ -1,8 +1,16 @@
 package com.sasha.CRUDwithHbn.model;
 
-public class Label {
+import javax.persistence.*;
 
+@Entity
+@Table (name = "labels", schema = "practic")
+public class Label {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id")
     private Integer id;
+
+    @Column(name = "name")
     private String name;
 
     public Label(){
