@@ -5,21 +5,20 @@
 <hibernate-configuration>
     <session-factory>
         <property name="hibernate.dialect">
-            org.hibernate.dialect.MySQLDialect
+            org.hibernate.dialect.PostgreSQL94Dialect
         </property>
         <property name="hibernate.connection.driver_class">
-            com.mysql.jdbc.Driver
+            org.postgresql.Driver
         </property>
 
-        <!-- Assume test is the database name -->
         <property name="hibernate.connection.url">
-            jdbc:mysql://localhost/database
+            jjdbc:postgresql://localhost:5432/practice
         </property>
         <property name="hibernate.connection.username">
-            root
+            RRneg
         </property>
         <property name="hibernate.connection.password">
-            password
+            Rfvbgt79
         </property>
 
     </session-factory>
