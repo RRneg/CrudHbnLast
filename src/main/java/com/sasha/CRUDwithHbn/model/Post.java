@@ -22,6 +22,13 @@ public class Post {
     String updated;
 
 
+    @JoinTable(name = "post_labels",
+    joinColumns = @JoinColumn(name = "post_id",
+    referencedColumnName = "posts.id"),
+    inverseJoinColumns = @JoinColumn(name = "label_id",
+    referencedColumnName = "labels.id")
+    )
+    @OneToMany
     List<Label> labels;
 
     @Column(name = "poststatus")
