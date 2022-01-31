@@ -14,7 +14,8 @@ public class HBNPostRepositoryImpl implements PostRepository {
     public Post getById(Integer id) {
         Session session = HbnUtils.getSession();
         Transaction transaction = session.beginTransaction();
-        Post post = session.get(Post.class, id);
+        String hql = String.format("FROM Post post inner join fetch Label label where post.id = %d", id);
+        Post post = (Post) session.createQuery(hql);
         transaction.commit();
         session.close();
         return post;
