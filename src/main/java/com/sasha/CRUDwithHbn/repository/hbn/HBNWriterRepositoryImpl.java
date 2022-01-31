@@ -17,7 +17,7 @@ public class HBNWriterRepositoryImpl implements WriterRepository {
         Writer writer = (Writer) session.createQuery(hql);
         transaction.commit();
         session.close();
-        return null;
+        return writer;
     }
 
     @Override
@@ -32,9 +32,10 @@ public class HBNWriterRepositoryImpl implements WriterRepository {
 
     @Override
     public void deleteById(Integer id) {
-        Writer writer = getById(id);
         Session session = HbnUtils.getSession();
         Transaction transaction = session.beginTransaction();
+        String hql = String.format("FROM Writer writer inner join fetch Post post inner join fetch Label label where writer.id = %d", id);
+        Writer writer = (Writer) session.createQuery(hql);
         session.delete(writer);
         transaction.commit();
         session.close();

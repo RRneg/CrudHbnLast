@@ -31,9 +31,9 @@ public class HBNLabelRepositoryImpl implements LabelRepository {
 
     @Override
     public void deleteById(Integer id) {
-        Label label = getById(id);
         Session session = HbnUtils.getSession();
         Transaction transaction = session.beginTransaction();
+        Label label = session.get(Label.class, id);
         session.delete(label);
         transaction.commit();
         session.close();
