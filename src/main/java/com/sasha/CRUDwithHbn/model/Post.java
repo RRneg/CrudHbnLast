@@ -8,31 +8,35 @@ import java.util.List;
 @Table (name = "posts", schema = "practic")
 public class Post {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column (name = "id")
-    Integer id;
+    private Integer id;
 
     @Column(name = "content")
-    String content;
+    private String content;
 
     @Column(name = "created")
-    String created;
+    private String created;
 
     @Column(name = "updated")
-    String updated;
+    private String updated;
 
 
     @JoinTable(name = "post_labels",
-    joinColumns = @JoinColumn(name = "post_id",
-    referencedColumnName = "posts.id"),
-    inverseJoinColumns = @JoinColumn(name = "label_id",
-    referencedColumnName = "labels.id")
+            joinColumns = @JoinColumn(name = "post_id",
+                    referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "label_id",
+                    referencedColumnName = "id")
     )
-    @OneToMany
-    List<Label> labels;
+    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private List<Label> labels;
 
-    @Column(name = "poststatus")
-    PostStatus postStatus;
+    @Enumerated(EnumType.STRING)
+    @Column(name = "post_status")
+    private PostStatus postStatus;
+
+    @ManyToMany(mappedBy = "posts", fetch = FetchType.LAZY)
+    private List<Writer> writers;
 
     public Post() {
     }

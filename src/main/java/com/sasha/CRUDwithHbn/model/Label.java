@@ -1,17 +1,21 @@
 package com.sasha.CRUDwithHbn.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table (name = "labels", schema = "practic")
 public class Label {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Integer id;
 
     @Column(name = "name")
     private String name;
+
+    @ManyToMany(mappedBy = "labels", fetch = FetchType.LAZY)
+    private List<Post> posts;
 
     public Label(){
 

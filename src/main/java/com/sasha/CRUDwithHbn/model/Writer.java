@@ -7,18 +7,25 @@ import java.util.List;
 @Table(name = "writers", schema = "practic")
 public class Writer {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    Integer id;
+    private Integer id;
 
     @Column(name = "firstname")
-    String firstName;
+    private String firstName;
 
     @Column(name = "lastname")
-    String lastName;
+    private String lastName;
+
+    @JoinTable(name = "writer_posts",
+     joinColumns = @JoinColumn(name = "writer_id",
+     referencedColumnName = "id"),
+    inverseJoinColumns = @JoinColumn(name = "posts_id",
+    referencedColumnName = "id"))
+    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private List<Post> posts;
 
 
-    List<Post> posts;
 
     public Writer() {
     }
