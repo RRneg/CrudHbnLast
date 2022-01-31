@@ -1,11 +1,11 @@
-package com.sasha.CRUDwithHbn.repository.gbn;
+package com.sasha.CRUDwithHbn.repository.hbn;
 
 import com.sasha.CRUDwithHbn.model.Writer;
 import com.sasha.CRUDwithHbn.repository.WriterRepository;
 
 import java.util.List;
 
-public class GBNWriterRepositoryImpl implements WriterRepository {
+public class HBNWriterRepositoryImpl implements WriterRepository {
     @Override
     public Writer getById(Integer integer) {
         return null;

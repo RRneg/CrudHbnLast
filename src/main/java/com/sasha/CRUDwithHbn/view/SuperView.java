@@ -1,6 +1,6 @@
 package com.sasha.CRUDwithHbn.view;
 
-import com.sasha.CRUDwithHbn.utils.GbnUtils;
+import com.sasha.CRUDwithHbn.utils.HbnUtils;
 
 import java.util.Scanner;
 
@@ -41,7 +41,7 @@ public class SuperView {
                     break;
                 case 4:
                     System.out.println(menu41);
-                    GbnUtils.closeSessionFactory();
+                    HbnUtils.closeSessionFactory();
                     break;
             }
 

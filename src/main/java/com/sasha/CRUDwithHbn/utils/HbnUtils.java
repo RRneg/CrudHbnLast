@@ -1,9 +1,10 @@
 package com.sasha.CRUDwithHbn.utils;
 
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-public class GbnUtils {
+public class HbnUtils {
 
     private static SessionFactory sessionFactory;
 
@@ -12,6 +13,10 @@ public class GbnUtils {
             sessionFactory = new Configuration().configure().buildSessionFactory();
         }
         return sessionFactory;
+    }
+
+    public static Session getSession(){
+        return getSessionFactory().openSession();
     }
 
     public static void closeSessionFactory() {

@@ -3,7 +3,7 @@ package com.sasha.CRUDwithHbn.service;
 
 import com.sasha.CRUDwithHbn.model.Writer;
 import com.sasha.CRUDwithHbn.repository.WriterRepository;
-import com.sasha.CRUDwithHbn.repository.gbn.GBNWriterRepositoryImpl;
+import com.sasha.CRUDwithHbn.repository.hbn.HBNWriterRepositoryImpl;
 
 
 import java.util.List;
@@ -13,7 +13,7 @@ public class WriterService {
     private WriterRepository writerRepository;
 
     public WriterService() {
-        this.writerRepository = new GBNWriterRepositoryImpl();
+        this.writerRepository = new HBNWriterRepositoryImpl();
     }
 
     public WriterService(WriterRepository writerRepository) {
