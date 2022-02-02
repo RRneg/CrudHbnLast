@@ -57,7 +57,7 @@ public class HBNPostRepositoryImpl implements PostRepository {
     public Post save(Post post) {
         Session session = HbnUtils.getSession();
         Transaction transaction = session.beginTransaction();
-        session.save(post);
+        post.setId((Integer)session.save(post));
         transaction.commit();
         session.close();
         return post;

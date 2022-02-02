@@ -51,7 +51,7 @@ public class HBNLabelRepositoryImpl implements LabelRepository {
     public Label save(Label label) {
         Session session = HbnUtils.getSession();
         Transaction transaction = session.beginTransaction();
-        session.save(label);
+        label.setId((Integer) session.save(label));
         transaction.commit();
         session.close();
         return label;

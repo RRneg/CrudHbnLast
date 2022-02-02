@@ -9,7 +9,7 @@ public class HbnUtils {
     private static SessionFactory sessionFactory;
 
     private static SessionFactory getSessionFactory() {
-        if (sessionFactory != null) {
+        if (sessionFactory == null) {
             sessionFactory = new Configuration().configure().buildSessionFactory();
         }
         return sessionFactory;

@@ -56,7 +56,7 @@ public class HBNWriterRepositoryImpl implements WriterRepository {
     public Writer save(Writer writer) {
         Session session = HbnUtils.getSession();
         Transaction transaction = session.beginTransaction();
-        session.save(writer);
+        writer.setId((Integer)session.save(writer));
         transaction.commit();
         session.close();
         return writer;
