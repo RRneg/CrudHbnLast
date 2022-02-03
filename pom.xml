@@ -26,7 +26,7 @@
         <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
-            <version>42.2.8</version>
+            <version>42.3.2</version>
         </dependency>
 
         <dependency>
@@ -56,7 +56,7 @@
                 <artifactId>flyway-maven-plugin</artifactId>
                 <version>8.4.1</version>
                 <configuration>
-                    <user>RRneg</user>
+                    <user>postgres</user>
                     <password>Rfvbgt79</password>
                     <schemas>
                         <schema>practice</schema>

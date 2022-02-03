@@ -15,7 +15,7 @@
             jjdbc:postgresql://localhost:5432/practice
         </property>
         <property name="hibernate.connection.username">
-            RRneg
+            postgres
         </property>
         <property name="hibernate.connection.password">
             Rfvbgt79
