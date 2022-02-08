@@ -35,8 +35,9 @@ public class Post {
     @Column(name = "post_status")
     private PostStatus postStatus;
 
-    @ManyToMany(mappedBy = "posts", fetch = FetchType.LAZY)
+    @ManyToMany(mappedBy = "writers", fetch = FetchType.LAZY)
     private List<Writer> writers;
+
 
     public Post() {
     }
