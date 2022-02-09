@@ -83,7 +83,7 @@ public class Post {
         this.updated = updated;
     }
 
-    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "posts") //не уверен, что с posts
+    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "posts")
     public List<Label> getLabels() {
         return labels;
     }
@@ -98,7 +98,7 @@ public class Post {
 
     @Override
     public String toString() {
-        return "com.sasha.sqlpractice.model.Post{" +
+        return "Post{" +
                 "id=" + id +
                 ", content='" + content + '\'' +
                 ", created='" + created + '\'' +
