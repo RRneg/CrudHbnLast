@@ -62,7 +62,7 @@ public class Writer {
         this.lastName = lastName;
     }
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "writers", cascade = CascadeType.ALL) //не уверен, что writers
+    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "writers", cascade = CascadeType.ALL) //не уверен, что writers
     public List<Post> getPosts() {
         return posts;
     }

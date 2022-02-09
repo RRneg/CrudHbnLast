@@ -83,7 +83,7 @@ public class Post {
         this.updated = updated;
     }
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "posts") //не уверен, что с posts
+    @ManyToMany(fetch = FetchType.LAZY, mappedBy = "posts") //не уверен, что с posts
     public List<Label> getLabels() {
         return labels;
     }
