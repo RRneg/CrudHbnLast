@@ -12,7 +12,7 @@
         </property>
 
         <property name="hibernate.connection.url">
-            jdbc:postgresql://localhost:5432/practice
+            jdbc:postgresql://localhost:5432/postgres
         </property>
         <property name="hibernate.connection.username">
             postgres
@@ -21,5 +21,8 @@
             Rfvbgt79
         </property>
 
+        <mapping class="com.sasha.CRUDwithHbn.model.Label"/>
+        <mapping class="com.sasha.CRUDwithHbn.model.Post"/>
+        <mapping class="com.sasha.CRUDwithHbn.model.Writer"/>
     </session-factory>
 </hibernate-configuration>
