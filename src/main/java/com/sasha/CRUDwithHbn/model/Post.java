@@ -5,7 +5,7 @@ import net.bytebuddy.dynamic.loading.InjectionClassLoader;
 import javax.persistence.*;
 import java.util.List;
 @Entity
-@Table (name = "posts", schema = "practic")
+@Table (name = "posts", schema = "postgres")
 public class Post {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -35,7 +35,7 @@ public class Post {
     @Column(name = "post_status")
     private PostStatus postStatus;
 
-    @ManyToMany(mappedBy = "writers", fetch = FetchType.LAZY)
+    @ManyToMany(mappedBy = "posts", fetch = FetchType.LAZY)
     private List<Writer> writers;
 
 

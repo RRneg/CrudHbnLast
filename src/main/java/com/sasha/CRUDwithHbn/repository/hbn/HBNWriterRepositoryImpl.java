@@ -5,6 +5,7 @@ import com.sasha.CRUDwithHbn.repository.WriterRepository;
 import com.sasha.CRUDwithHbn.utils.HbnUtils;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
