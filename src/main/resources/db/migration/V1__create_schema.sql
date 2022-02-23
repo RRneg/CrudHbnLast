@@ -8,7 +8,7 @@ CREATE TABLE posts (
                        content CHARACTER VARYING(255),
                        created TIMESTAMP,
                        updated TIMESTAMP,
-                       post_status CHARACTER VARYING(30),
+                       post_status CHARACTER VARYING(30)
 );
 
 CREATE TABLE post_labels(
