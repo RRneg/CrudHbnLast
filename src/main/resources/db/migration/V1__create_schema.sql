@@ -1,14 +1,14 @@
 CREATE TABLE labels (
-                        id INTEGER PRIMARY KEY,
+                        id SERIAL PRIMARY KEY,
                         name CHARACTER VARYING(255)
 );
 
 CREATE TABLE posts (
-                       id INTEGER PRIMARY KEY,
+                       id SERIAL PRIMARY KEY,
                        content CHARACTER VARYING(255),
                        created TIMESTAMP,
                        updated TIMESTAMP,
-                       post_status CHARACTER VARYING(30)
+                       post_status CHARACTER VARYING(30),
 );
 
 CREATE TABLE post_labels(
@@ -20,7 +20,7 @@ CREATE TABLE post_labels(
 );
 
 CREATE TABLE writers(
-                        id INTEGER PRIMARY KEY,
+                        id SERIAL PRIMARY KEY,
                         first_name CHARACTER VARYING(255),
                         last_name CHARACTER VARYING(255)
 );

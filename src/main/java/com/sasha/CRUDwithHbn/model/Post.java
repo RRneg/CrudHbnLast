@@ -26,8 +26,7 @@ public class Post {
             joinColumns = @JoinColumn(name = "post_id",
                     referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(name = "label_id",
-                    referencedColumnName = "id")
-    )
+                    referencedColumnName = "id"))
     @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<Label> labels;
 
