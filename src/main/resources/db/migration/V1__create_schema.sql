@@ -1,10 +1,10 @@
 CREATE TABLE labels (
-                        id SERIAL PRIMARY KEY,
+                        id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
                         name CHARACTER VARYING(255)
 );
 
 CREATE TABLE posts (
-                       id SERIAL PRIMARY KEY,
+                       id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY ,
                        content CHARACTER VARYING(255),
                        created TIMESTAMP,
                        updated TIMESTAMP,
@@ -20,7 +20,7 @@ CREATE TABLE post_labels(
 );
 
 CREATE TABLE writers(
-                        id SERIAL PRIMARY KEY,
+                        id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
                         first_name CHARACTER VARYING(255),
                         last_name CHARACTER VARYING(255)
 );
