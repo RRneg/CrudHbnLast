@@ -4,7 +4,7 @@ CREATE TABLE labels (
 );
 
 CREATE TABLE posts (
-                       id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY ,
+                       id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
                        content CHARACTER VARYING(255),
                        created TIMESTAMP,
                        updated TIMESTAMP,
